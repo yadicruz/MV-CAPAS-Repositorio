@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8a4b958b-088e-4d6a-83ba-6c0bbfcc6e20" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54401/ServicesWCFAlumno.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicesWCFAlumno.xsd" MetadataType="Schema" ID="aa5150ed-3bd1-4417-8647-cfcca85773a1" SourceId="1" SourceUrl="http://localhost:54401/ServicesWCFAlumno.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicesWCFAlumno.disco" MetadataType="Disco" ID="317b5d27-9fca-4627-860e-83c605bd80ed" SourceId="1" SourceUrl="http://localhost:54401/ServicesWCFAlumno.svc?disco" />
+    <MetadataFile FileName="ServicesWCFAlumno.wsdl" MetadataType="Wsdl" ID="18057ebf-bb4c-4eee-b219-570958bbce8d" SourceId="1" SourceUrl="http://localhost:54401/ServicesWCFAlumno.svc?wsdl" />
+    <MetadataFile FileName="ServicesWCFAlumno1.xsd" MetadataType="Schema" ID="2b06eac7-ec9c-42b9-9186-4e0089025514" SourceId="1" SourceUrl="http://localhost:54401/ServicesWCFAlumno.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicesWCFAlumno2.xsd" MetadataType="Schema" ID="23ef2464-a657-4a1d-a67a-d77a7fc670ee" SourceId="1" SourceUrl="http://localhost:54401/ServicesWCFAlumno.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

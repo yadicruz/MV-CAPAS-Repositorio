@@ -1,0 +1,146 @@
+﻿@model IEnumerable<Entidades.Alumnos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Alumnos</h2>
+
+<p>
+    @Html.ActionLink("Agregar Alumno", "Create",null, htmlAttributes: new { @class = "btn btn-success" })
+</p>
+<div class="container">
+
+
+    <table class="table table-responsive table-hover" style="text-align:center">
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.nombre)*@
+                @Html.DisplayName("Nombre")
+            </th>
+            <th>
+                @Html.DisplayName("Apellido Materno")
+            </th>
+            <th>
+                @Html.DisplayName("Apellido Paterno")
+                @*@Html.DisplayNameFor(model => model.segundoApellido)*@
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.correo)*@
+                @Html.DisplayName("Correo")
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.telefono)*@
+                @Html.DisplayName("Telefono")
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.fechaNacimiento)*@
+                @Html.DisplayName("Fecha de Nacimiento")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.curp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idEstadoOrigen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idEstatus)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.primerApellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.segundoApellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.correo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fechaNacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.curp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estados.nombre)
+                </td>
+                <td>
+
+                    @Html.RadioButtonFor(modelItem => item.idEstatus, 1, htmlAttributes: new { @class = "ActivoSpan" })
+                    @Html.DisplayFor(modelItem => item.EstatusAlumnos.nombre)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.id }, htmlAttributes: new { @class = "btn btn-primary" })
+                    @*@Html.ActionLink("Detalles", "Details", new { id=item.id }, htmlAttributes: new { @class = "btn btn-info" })*@
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, htmlAttributes: new { @class = "btn btn-danger" })
+
+                 
+                    <a onclick="detalles(@item.id)" class="btn btn-warning">Vista Parcial</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="container">
+
+    <!-- Ventana Modal -->
+    <div class="modal" id="myModal" style="text-align:center" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Encabezado Modal -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Detalle del alumno</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Curepo de la Modal -->
+                <div class="modal-body " >
+                    <p id="idModal"></p>
+                   
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@{ 
+    <script type="text/javascript">
+        function detalles(id) {
+            var urlE = "@Url.Action("_DetalleParcial","Alumno")";
+            var urlR =  urlE +"/"+ id;
+            llamadoAjaxGEThtml(urlR, funExito);
+        }
+
+        function funExito(respuestaParcial) {
+            $('#idModal').html(
+                respuestaParcial
+
+            );
+
+            $('#myModal').modal('show');
+
+        }
+
+
+    </script>
+}
